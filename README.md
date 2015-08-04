@@ -133,8 +133,8 @@ Our macaroon includes some additional information that enables us to add caveats
 and figure out where the macaroon should be used.  The macaroon's location gives
 a hint to the user about where the macaroon is accepted for authorization.  This
 hint is a free-form string maintained to help applications figure out where to
-use macaroons; the libmacaroons library (and by extension, the C++ wrapper) do
-not ascribe any meaning to this location.
+use macaroons; the libmacaroons library (and by extension, the C++ wrapper)
+does not ascribe any meaning to this location.
 
 Each macaroon also has a signature that is the key used to add caveats and
 verify the macaroon.  The signature is computed by the macaroons library, and is
@@ -293,7 +293,7 @@ our verifier cannot prove that any of the caveats we've added are satisfied.  We
 can see that it fails just as we would expect (an alternative version of this
 method, `verifyUnsafe()`, returns a boolean value instead of throwing an
 exception.  The 'Unsafe' suffix is used for consistency with libmacaroons'
-Python bindings.
+Python bindings):
 
 ```C++
 V.verify(M, secret);
@@ -388,7 +388,7 @@ auto checkTime = [](const std::string &caveat) {
 ```
 
 This callback processes all caveats that begin with `time < `, and returns
-True if the specified time has not yet passed.  We can see that our caveat does
+true if the specified time has not yet passed.  We can see that our caveat does
 indeed return true when the caveat holds, and false otherwise:
 
 ```C++
